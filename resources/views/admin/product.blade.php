@@ -23,6 +23,7 @@
                       <tr>
                         <td>{{$product->id}}</td>
                         <td>{{$product->name}}</td>
+                        <td>{{$product->category_id}}</td>
                         <td>
                             <a class="btn btn-success" href="{{url('/product-edit/'.$product->id)}}">تعديل</a>
                             <a class="btn btn-danger" href="{{url('/product-delete/'.$product->id)}}">حذف</a>

@@ -15,4 +15,28 @@ class CategoryController extends Controller
     public function add() {
         return view('admin.category-add');
     }
+
+    public function store(Request $request) {
+        $request->validate([
+            'name' => 'required'
+        ]);
+
+        $category = new Category;
+        $category->name = $request['name'];
+        $category->save();
+
+        return redirect('/category');
+    }
+
+    public function edit($id) {
+
+    }
+
+    public function update($id, Request $request) {
+
+    }
+
+    public function delete($id) {
+
+    }
 }
