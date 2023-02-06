@@ -37,11 +37,27 @@ class InventoryController extends Controller
     }
 
     public function edit($id) {
-
+        $inventory = Inventory::find($id);
+        $products = Product::all();
+        return view('admin.inventory-edit', compact('inventory', 'products'));
     }
 
     public function update($id, Request $request) {
+        $request->validate([
+            'product_id' => 'required',
+            'price' => 'required',
+            'quantity' => 'required',
+            'expire_date' => 'required',
+        ]);
 
+        $inventory = Inventory::find($id);
+        $inventory->product_id = $request['product_id'];
+        $inventory->price = $request['price'];
+        $inventory->quantity = $request['quantity'];
+        $inventory->expire_date = $request['expire_date'];
+        $inventory->save();
+
+        return redirect('/inventory');
     }
 
     public function delete($id) {

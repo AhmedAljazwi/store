@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->String('name');
             $table->bigInteger('category_id');
+            $table->String('img');
             $table->timestamps();
         });
     }

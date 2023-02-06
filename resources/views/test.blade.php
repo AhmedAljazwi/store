@@ -13,10 +13,9 @@
             <div class="card-body">
                 <form id="form" action="/test" method="post">
                     @csrf
+                    <span class="text-danger" id="usernameError"></span>
                     <label for="">Username</label>
-                    <span id="usernameError"></span>
                     <input class="form-control mt-1 mb-3" type="text" id="username" name="username">
-
                     <label for="">Password</label>
                     <span id="passwordError"></span>
                     <input class="form-control mt-1 mb-3" type="password" id="password" name="password">
@@ -29,6 +28,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
     <script>
+        const form = document.getElementById('form')
         const username = document.getElementById('username')
         const password = document.getElementById('password')
         const usernameError = document.getElementById('usernameError')
@@ -37,13 +37,13 @@
         form.addEventListener('submit', (e) => {
             let messages = []
 
-            if(username === '' || username == null) {
-                messages.push('username error')
+            if(username.value === '' || username.value == null) {
+                messages.push('Please enter a ')
             }
 
             if(messages.length > 0) {
                 e.preventDefault()
-                usernameError.innerHtml = messages.join(', ')
+                usernameError.innerText = messages.join(', ')
             }
             
         })

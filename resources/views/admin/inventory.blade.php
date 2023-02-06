@@ -26,7 +26,7 @@
                       <tr>
                         <td>{{$inventory->id}}</td>
                         <td>{{$inventory->product_id}}</td>
-                        <td>{{$inventory->product_id}}</td>
+                        <td>{{$inventory->product->name}}</td>
                         <td>{{$inventory->price}}</td>
                         <td>{{$inventory->quantity}}</td>
                         <td>{{$inventory->expire_date}}</td>

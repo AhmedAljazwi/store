@@ -21,7 +21,7 @@
                         <td>{{$bill->id}}</td>
                         <td>{{$bill->order_id}}</td>
                         <td>{{$bill->user_id}}</td>
-                        <td>{{$bill->user_id}}</td>
+                        <td>{{$bill->user->name}}</td>
                         <td>{{$bill->total}}</td>
                         <td>
                             <a class="btn btn-success" href="{{url('/bill-edit/'.$bill->id)}}">تعديل</a>

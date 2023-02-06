@@ -15,6 +15,7 @@
                     <th scope="col">#</th>
                     <th scope="col">الإسم</th>
                     <th>الفئة</th>
+                    <th>الصورة</th>
                     <th>عمليات</th>
                   </tr>
                 </thead>
@@ -23,7 +24,10 @@
                       <tr>
                         <td>{{$product->id}}</td>
                         <td>{{$product->name}}</td>
-                        <td>{{$product->category_id}}</td>
+                        <td>{{$product->category->name}}</td>
+                        <td>
+                          <img src="{{$product->img}}" alt="" height="80px" width="70px">
+                        </td>
                         <td>
                             <a class="btn btn-success" href="{{url('/product-edit/'.$product->id)}}">تعديل</a>
                             <a class="btn btn-danger" href="{{url('/product-delete/'.$product->id)}}">حذف</a>

@@ -8,6 +8,9 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
+use App\Http\Controllers\HomeController;
+
+Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/category', [CategoryController::class, 'index']);
 Route::get('/category-add', [CategoryController::class, 'add']);

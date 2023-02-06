@@ -29,7 +29,7 @@
                         <td>{{$user->email}}</td>
                         <td>{{$user->phone}}</td>
                         <td>{{$user->address}}</td>
-                        <td>{{$user->gender_id}}</td>
+                        <td>{{$user->gender->name}}</td>
                         <td>
                             <a class="btn btn-success" href="{{url('/user-edit/'.$user->id)}}">تعديل</a>
                             <a class="btn btn-danger" href="{{url('/user-delete/'.$user->id)}}">حذف</a>

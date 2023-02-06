@@ -19,6 +19,7 @@ return new class extends Migration
             $table->decimal('price', 5, 2);
             $table->integer('quantity');
             $table->Date('expire_date');
+            $table->Boolean('isActive')->default('1');
             $table->timestamps();
         });
     }

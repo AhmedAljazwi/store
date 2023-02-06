@@ -7,5 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Inventory extends Model
 {
-    use HasFactory;
+    protected $fillable = [
+        'product_id',
+        'price',
+        'quantity',
+        'expire_date'
+    ];
+
+    public function product() {
+        return $this->belongsTo(Product::class, 'product_id', 'id');
+    }
 }

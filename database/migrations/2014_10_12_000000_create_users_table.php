@@ -22,6 +22,7 @@ return new class extends Migration
             $table->integer('gender_id');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->Boolean('isAdmin')->default('0');
             $table->rememberToken();
             $table->timestamps();
         });

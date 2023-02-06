@@ -29,11 +29,20 @@ class CategoryController extends Controller
     }
 
     public function edit($id) {
-
+        $category = Category::find($id);
+        return view('admin.category-edit', compact('category'));
     }
 
     public function update($id, Request $request) {
+        $request->validate([
+            'name' => 'required'
+        ]);
 
+        $category = Category::find($id);
+        $category->name = $request['name'];
+        $category->save();
+
+        return redirect('/category');
     }
 
     public function delete($id) {
