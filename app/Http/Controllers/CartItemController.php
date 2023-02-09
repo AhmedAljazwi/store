@@ -14,7 +14,7 @@ class CartItemController extends Controller
         }
 
         $cartItem = new CartItem;
-        $cartItem->user_id = 1;
+        $cartItem->user_id = Auth::user()->id;
         $cartItem->inventory_id = $id;
         $cartItem->quantity = 1;
         $cartItem->save();
